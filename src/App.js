@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router';
 import './App.css';
-
-function App() {
+import Movies from './components/Movies';
+import Subscriptions from './components/Subscriptions';
+import ResponsiveAppBar from './components/ResponsiveAppBar'
+import Users from './components/Users';
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ResponsiveAppBar/>
+      <Routes>
+          <Route path='/users' element={<Users/>}></Route>
+          <Route path='/movies' element={<Movies/>}></Route>
+          <Route path='/subscriptions' element={<Subscriptions/>}></Route>
+      </Routes>
     </div>
   );
 }
